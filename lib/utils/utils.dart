@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sayx/utils/utils.dart' as utils;
+
+void telaCheia() {
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+}
 
 //#region EstiloTexto
 
@@ -31,30 +36,30 @@ TextStyle textoPequeno(){
 
 //#region EstiloBotao
 
-ButtonStyle ButtonShade(){
+ButtonStyle botaoShade(){
   return ElevatedButton.styleFrom(
     backgroundColor: const Color.fromARGB(255, 39, 205, 242),
     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(10),
       side: const BorderSide(
           color: Colors.black,
-          width: 0.6
+          width: 1
       ),
     ),
   );
 }
 
-ButtonStyle ButtonTransp(){
+ButtonStyle botaoTransp(){
   return ElevatedButton.styleFrom(
     backgroundColor: Colors.transparent,
     shadowColor: Colors.transparent,
     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(10),
       side: const BorderSide(
           color: Colors.white,
-          width: 0.6
+          width: 1
       ),
     ),
   );

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sayx/utils/utils.dart' as utils;
 
+//#region Funções
+
+//Função para deixar a tela em fullscreen
 void telaCheia() {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
 }
+
+//#endregion Funções
 
 //#region EstiloTexto
 
@@ -29,6 +33,14 @@ TextStyle textoPequeno(){
   return const TextStyle(
     color: Colors.white,
     fontSize: 12,
+    fontFamily: 'Montserrat',
+  );
+}
+
+TextStyle textoEditavel(double tamFonte){
+  return TextStyle(
+    color: Colors.white,
+    fontSize: tamFonte,
     fontFamily: 'Montserrat',
   );
 }
@@ -65,4 +77,51 @@ ButtonStyle botaoTransp(){
   );
 }
 
+ButtonStyle botaoFullTransp(){
+  return ButtonStyle(
+    backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 24, 24, 24)),
+    shadowColor: MaterialStateProperty.all(Colors.transparent),
+    animationDuration: Duration.zero,
+    textStyle: MaterialStateProperty.all(textoMedio().copyWith(color: Color.fromARGB(255, 242, 82, 125), fontWeight: FontWeight.bold)),
+    padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 100, vertical: 10)),
+    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(15),
+      side: const BorderSide(
+          color: Colors.transparent,
+          width: 0.6
+      ),
+    )),
+    overlayColor: MaterialStateProperty.all(Colors.transparent),
+  );
+}
+
 //#endregion EstiloBotao
+
+//#region ElementosFormProntos
+
+TextFormField inputTransp(controller, String texto){
+  return TextFormField(
+      style: textoMedio(),
+      controller: controller,
+      maxLength: 15,
+      maxLines: 1,
+      decoration: InputDecoration(
+        hintText: texto,
+        hintStyle: textoEditavel(14),
+        labelStyle: textoEditavel(14),
+        counter: const Offstage(),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 0, vertical: 9.5),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.transparent),
+        ),
+        disabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.transparent),
+        ),
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.transparent),
+        ),
+      )
+  );
+}
+
+//#endregion EstiloInput

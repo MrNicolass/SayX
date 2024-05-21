@@ -1,6 +1,6 @@
 # SayX
 Aplicativo para Fotógrafos e *VideoMakers* <br>
-  <img alt="Project Status" src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-green">
+  <img alt="Project Status" src="https://img.shields.io/badge/Status-Cancelado-red">
   <a href='https://github.com/MrNicolass/SayX/blob/main/LICENSE'><img alt="License" src="https://img.shields.io/badge/License-MIT-green?"></a>
 
 ## Descrição
